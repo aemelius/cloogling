@@ -7,5 +7,5 @@
   "Get results from json data retrieved from engine"
   [x]
   (map (fn [x] (->entry (x "Url" ))) (-> x
-      json/read-str
-      (get-in ["d" "results"]))))
+                                         json/read-str
+                                         (get-in ["d" "results"]))))
