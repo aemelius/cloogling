@@ -35,5 +35,9 @@
             first
             (:snippet))
         )
-
+;; if the data is not a valid json, I expect an empty list of entries
 (expect [] (get-entries "this is not a valid bing like json"))
+
+;; if the data is valid json, but is in a different structure than what I expect from Bing, I will return an empty list
+(expect [] (get-entries (slurp "test/cloogling/bad_data_bing_d_or_results.json")))
+
