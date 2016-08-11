@@ -13,20 +13,20 @@
 
 ;; test on the first entry's url
 (expect "https://en.wikipedia.org/wiki/Miles_Davis"
-               (-> miles_davis_data
-                   get-entries
-                   first
-                   (:url)
-                   )
+        (-> miles_davis_data
+            get-entries
+            first
+            (:url)
+            )
         )
 
 ;; test on the first entry's title
 (expect "Miles Davis - Wikipedia, the free encyclopedia"
-               (-> miles_davis_data
-                   get-entries
-                   first
-                   (:title))
-                   )
+        (-> miles_davis_data
+            get-entries
+            first
+            (:title))
+        )
 
 
 
