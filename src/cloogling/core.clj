@@ -5,14 +5,15 @@
 
 
 (defn create-entry
-(  [x]
+ [x]
   (try
     (->entry (x "Url" ) (x "Title") (x "Description"))
     (catch IllegalArgumentException e nil)
     )
 )
 
-(  [x y]
+(defn create-entry-google
+ [x]
   (try
     (->entry (x "link" ) (x "title") (x "snippet"))
     (catch IllegalArgumentException e nil)
@@ -21,8 +22,6 @@
 
 
 
-
-  )
 
 (defn get-entries
   (
@@ -34,9 +33,13 @@
                                    (catch Exception e (empty nil))
                                    )
                     )))
+
+  )
+
+(defn get-entries-google
   (
-  [x y]
-  (remove nil? (map create-entry (try
+  [x]
+  (remove nil? (map create-entry-google (try
                                    (-> x
                                        json/read-str
                                        (get-in ["items"]))
@@ -44,6 +47,8 @@
                                    )
                     )))
   )
+
+
 
 
 

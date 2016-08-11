@@ -56,6 +56,31 @@
 (def miles_davis_data_google (slurp "test/cloogling/miles_davis_google.json"))
 
 ;; Counting entries in standard test data
-(expect 10 (count (get-entries miles_davis_data_google :google)))
+(expect 10 (count (get-entries-google miles_davis_data_google)))
 
+;; test on the first entry's url
+(expect "https://en.wikipedia.org/wiki/Miles_Davis"
+        (-> miles_davis_data_google
+            get-entries-google
+            first
+            (:url)
+            )
+        )
+
+
+;; test on the first entry's title
+(expect "Miles Davis - Wikipedia, the free encyclopedia"
+        (-> miles_davis_data_google
+            get-entries-google
+            first
+            (:title))
+        )
+
+;; test on the first entry's snippet
+(expect "Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American \njazz trumpeter, bandleader, and composer. He is among the most influential and\n ..."
+        (-> miles_davis_data_google
+            get-entries-google
+            first
+            (:snippet))
+        )
 
