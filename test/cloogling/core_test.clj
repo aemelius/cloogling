@@ -43,3 +43,9 @@
 ;; if the data is valid json, but is in a different structure than what I expect from Bing, I will return an empty list
 (expect [] (get-entries (slurp "test/cloogling/bad_data_bing_d_or_results.json")))
 
+;; valid json, but does not contain a list of entries
+(expect [] (get-entries (slurp "test/cloogling/bad_data_bing_2.json")))
+
+;; valid json, it contains a list of entries in the right place, but the keys are not what expected from Bing
+(expect [] (get-entries (slurp "test/cloogling/bad_data_bing_3.json")))
+
