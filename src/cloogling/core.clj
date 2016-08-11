@@ -21,32 +21,32 @@
 )
 
 
-
-
-(defn get-entries
-  (
+(defn g
   [x]
-  (remove nil? (map create-entry (try
+  (get-in x ["items"])
+  )
+
+(defn b
+  [x]
+  (get-in x  ["d" "results"])
+  )
+
+(defn get-entries-generic
+  (
+  [x f create]
+  (remove nil? (map create (try
                                    (-> x
                                        json/read-str
-                                       (get-in ["d" "results"]))
+                                       f)
                                    (catch Exception e (empty nil))
                                    )
                     )))
 
   )
 
-(defn get-entries-google
-  (
-  [x]
-  (remove nil? (map create-entry-google (try
-                                   (-> x
-                                       json/read-str
-                                       (get-in ["items"]))
-                                   (catch Exception e (empty nil))
-                                   )
-                    )))
-  )
+
+
+
 
 
 
