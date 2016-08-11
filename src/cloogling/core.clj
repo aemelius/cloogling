@@ -1,6 +1,6 @@
 (ns cloogling.core)
 
-(defn foo
-  "I don't do a whole lot."
+(defn get-entries
+  "Get results from json data retrieved from engine"
   [x]
-  (println x "Hello, World!"))
+  x)
