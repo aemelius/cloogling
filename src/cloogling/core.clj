@@ -4,13 +4,26 @@
 (defrecord entry [url title snippet])
 
 
+(defn create-entry
+  "create an entry record"
+  [x]
+  (try
+    (->entry (x "Url" ) (x "Title") (x "Description"))
+    (catch IllegalArgumentException e nil)
+    )
+  )
+
 (defn get-entries
   "Get results from json data retrieved from engine"
   [x]
-  (map (fn [x] (->entry (x "Url" ) (x "Title") (x "Description"))) (try
-                                                                     (-> x
-                                                                       json/read-str
-                                                                       (get-in ["d" "results"]))
-                                                                     (catch Exception e (empty nil))
-                                                                     )
-                                                                    ))
+  (remove nil? (map create-entry (try
+                                   (-> x
+                                       json/read-str
+                                       (get-in ["d" "results"]))
+                                   (catch Exception e (empty nil))
+                                   )
+                    ))
+  )
+
+
+
