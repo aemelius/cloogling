@@ -35,3 +35,5 @@
             first
             (:snippet))
         )
+
+(expect [] (get-entries "this is not a valid bing like json"))
