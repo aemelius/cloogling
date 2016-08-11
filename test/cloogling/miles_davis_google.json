@@ -1,0 +1,625 @@
+{
+ "kind": "customsearch#search",
+ "url": {
+  "type": "application/json",
+  "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+ },
+ "queries": {
+  "request": [
+   {
+    "title": "Google Custom Search - Miles Davis",
+    "totalResults": "7820000",
+    "searchTerms": "Miles Davis",
+    "count": 10,
+    "startIndex": 1,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "000461503989153503649:2ymmjmvothw"
+   }
+  ],
+  "nextPage": [
+   {
+    "title": "Google Custom Search - Miles Davis",
+    "totalResults": "7820000",
+    "searchTerms": "Miles Davis",
+    "count": 10,
+    "startIndex": 11,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "000461503989153503649:2ymmjmvothw"
+   }
+  ]
+ },
+ "context": {
+  "title": "aemelius1"
+ },
+ "searchInformation": {
+  "searchTime": 0.335123,
+  "formattedSearchTime": "0.34",
+  "totalResults": "7820000",
+  "formattedTotalResults": "7,820,000"
+ },
+ "items": [
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis - Wikipedia, the free encyclopedia",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e - Wikipedia, the free encyclopedia",
+   "link": "https://en.wikipedia.org/wiki/Miles_Davis",
+   "displayLink": "en.wikipedia.org",
+   "snippet": "Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American \njazz trumpeter, bandleader, and composer. He is among the most influential and\n ...",
+   "htmlSnippet": "\u003cb\u003eMiles\u003c/b\u003e Dewey \u003cb\u003eDavis\u003c/b\u003e III (May 26, 1926 – September 28, 1991) was an American \u003cbr\u003e\njazz trumpeter, bandleader, and composer. He is among the most influential and\u003cbr\u003e\n&nbsp;...",
+   "cacheId": "gqK0YR7MkaEJ",
+   "formattedUrl": "https://en.wikipedia.org/wiki/Miles_Davis",
+   "htmlFormattedUrl": "https://en.wikipedia.org/wiki/\u003cb\u003eMiles\u003c/b\u003e_\u003cb\u003eDavis\u003c/b\u003e",
+   "pagemap": {
+    "hcard": [
+     {
+      "fn": "Miles Davis",
+      "nickname": "Miles Dewey Davis III",
+      "url": "www.milesdavis.com",
+      "url_text": "www.milesdavis.com",
+      "bday": "1926-05-26",
+      "role": "Musician bandleader composer",
+      "note": "Trumpet flugelhorn piano synthesizer organ"
+     },
+     {
+      "fn": "Miles Davis"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "176",
+      "height": "176",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQJFWNCzyS1vpWQIEnMXggHIhms0DShEl7OPKX79qOrohdIdo1I-xU4kfe3"
+     }
+    ],
+    "person": [
+     {
+      "role": "Musician bandleader composer"
+     }
+    ],
+    "metatags": [
+     {
+      "referrer": "origin-when-cross-origin"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Miles_Davis_by_Palumbo.jpg/220px-Miles_Davis_by_Palumbo.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis | Official Site",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e | Official Site",
+   "link": "https://www.milesdavis.com/",
+   "displayLink": "www.milesdavis.com",
+   "snippet": "Official site of Davis's estate, has biographical information, discography, pictures \nand includes online store to purchase Davis memorabilia, music, and books.",
+   "htmlSnippet": "Official site of \u003cb\u003eDavis&#39;s\u003c/b\u003e estate, has biographical information, discography, pictures \u003cbr\u003e\nand includes online store to purchase \u003cb\u003eDavis\u003c/b\u003e memorabilia, music, and books.",
+   "cacheId": "Ky-zZqmQocYJ",
+   "formattedUrl": "https://www.milesdavis.com/",
+   "htmlFormattedUrl": "https://www.\u003cb\u003emilesdavis\u003c/b\u003e.com/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "310",
+      "height": "163",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSxdWw6f3k9dVFomZPLRfubMfm0QW9PGgJ8atShFva0utYiICSLpnUiQmWS"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, user-scalable=no",
+      "og:title": "Miles Davis",
+      "og:url": "https://www.milesdavis.com",
+      "og:image": "https://www.milesdavis.com/wp-content/themes/milesdavis/images/fb-share.jpg",
+      "og:description": "Official Site",
+      "og:type": "website",
+      "og:site_name": "Miles Davis",
+      "fb:app_id": "353918890324"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://www.milesdavis.com/wp-content/themes/milesdavis/images/fb-share.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis | Biography, Albums, & Streaming Radio | AllMusic",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e | Biography, Albums, &amp; Streaming Radio | AllMusic",
+   "link": "http://www.allmusic.com/artist/miles-davis-mn0000423829",
+   "displayLink": "www.allmusic.com",
+   "snippet": "Find Miles Davis bio, music, credits, awards, & streaming radio on AllMusic - The \nepitome of cool, an eternally evolving…",
+   "htmlSnippet": "Find \u003cb\u003eMiles Davis\u003c/b\u003e bio, music, credits, awards, &amp; streaming radio on AllMusic - The \u003cbr\u003e\nepitome of cool, an eternally evolving…",
+   "cacheId": "-HIlPG0U-JcJ",
+   "formattedUrl": "www.allmusic.com/artist/miles-davis-mn0000423829",
+   "htmlFormattedUrl": "www.allmusic.com/artist/\u003cb\u003emiles\u003c/b\u003e-\u003cb\u003edavis\u003c/b\u003e-mn0000423829",
+   "pagemap": {
+    "musicalbum": [
+     {
+      "url": "http://www.allmusic.com/album/bitches-brew-mw0000188019",
+      "byartist": "Miles Davis",
+      "name": "Bitches Brew"
+     },
+     {
+      "url": "http://www.allmusic.com/album/kind-of-blue-mw0000191710",
+      "byartist": "Miles Davis",
+      "name": "Kind of Blue"
+     },
+     {
+      "url": "http://www.allmusic.com/album/miles-at-the-fillmore-miles-davis-1970-the-bootleg-series-vol-3-mw0002619823",
+      "byartist": "Miles Davis",
+      "name": "Miles at the Fillmore - …"
+     },
+     {
+      "url": "http://www.allmusic.com/album/on-the-corner-mw0000197892",
+      "byartist": "Miles Davis",
+      "name": "On the Corner"
+     },
+     {
+      "url": "http://www.allmusic.com/album/birth-of-the-cool-mw0000111184",
+      "byartist": "Miles Davis",
+      "name": "Birth of the Cool"
+     },
+     {
+      "url": "http://www.allmusic.com/album/workin-with-the-miles-davis-quintet-mw0000649474",
+      "byartist": "Miles Davis / Miles Dav …",
+      "name": "Workin' with the Miles …"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "183",
+      "height": "275",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTAgRdSBgYfzAf95vMkgSvEEKLMhmaIz_RwlGDKXGnMwM5kK7CIBjuzveU"
+     }
+    ],
+    "review": [
+     {
+      "name": "Miles Davis",
+      "author": "William Ruhlmann",
+      "reviewbody": "The epitome of cool, an eternally evolving trumpeter who repeatedly changed the course of jazz between the 1950s and '90s."
+     }
+    ],
+    "musicgroup": [
+     {
+      "image": "http://cps-static.rovicorp.com/3/JPG_500/MI0003/641/MI0003641449.jpg?partner=allrovi.com",
+      "albums": "Miles Davis Bitches Brew Miles Davis Kind of Blue Miles Davis Miles at the Fillmore - … Miles Davis On the Corner Miles Davis Birth of the Cool Miles Davis / Miles Dav … Workin' with the Miles …"
+     }
+    ],
+    "metatags": [
+     {
+      "apple-mobile-web-app-capable": "no",
+      "viewport": "width=device-width",
+      "title": "Miles Davis | Biography, Albums, & Streaming Radio | AllMusic",
+      "image": "http://cps-static.rovicorp.com/3/JPG_500/MI0003/641/MI0003641449.jpg?partner=allrovi.com",
+      "og:site_name": "AllMusic",
+      "og:title": "Miles Davis | Biography, Albums, & Streaming Radio | AllMusic",
+      "twitter:title": "Miles Davis | Biography, Albums, & Streaming Radio | AllMusic",
+      "og:description": "Find Miles Davis bio, music, credits, awards, & streaming radio on AllMusic - The epitome of cool, an eternally evolving&hellip;",
+      "twitter:description": "Find Miles Davis bio, music, credits, awards, & streaming radio on AllMusic - The epitome of cool, an eternally evolving&hellip;",
+      "og:image": "http://cps-static.rovicorp.com/3/JPG_500/MI0003/641/MI0003641449.jpg?partner=allrovi.com",
+      "twitter:card": "summary",
+      "twitter:image": "http://cps-static.rovicorp.com/3/JPG_500/MI0003/641/MI0003641449.jpg?partner=allrovi.com",
+      "og:url": "http://www.allmusic.com/artist/miles-davis-mn0000423829",
+      "alexaverifyid": "SfgYrX5roRNK_iy-Mr_tFkRlY7M"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://cps-static.rovicorp.com/3/JPG_500/MI0003/641/MI0003641449.jpg?partner=allrovi.com"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis - Songwriter, Trumpet Player - Biography.com",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e - Songwriter, Trumpet Player - Biography.com",
+   "link": "http://www.biography.com/people/miles-davis-9267992",
+   "displayLink": "www.biography.com",
+   "snippet": "Miles Davis - Mini Biography (TV-14; 3:00) Nine-time Grammy Award winner \nMiles Davis was a major force in the jazz world, as both a trumpet player and a ...",
+   "htmlSnippet": "\u003cb\u003eMiles Davis\u003c/b\u003e - Mini Biography (TV-14; 3:00) Nine-time Grammy Award winner \u003cbr\u003e\n\u003cb\u003eMiles Davis\u003c/b\u003e was a major force in the jazz world, as both a trumpet player and a&nbsp;...",
+   "cacheId": "FI178Y-ovUoJ",
+   "formattedUrl": "www.biography.com/people/miles-davis-9267992",
+   "htmlFormattedUrl": "www.biography.com/people/\u003cb\u003emiles\u003c/b\u003e-\u003cb\u003edavis\u003c/b\u003e-9267992",
+   "pagemap": {
+    "hcard": [
+     {
+      "fn": "Miles Davis",
+      "bday": "1926-05-26",
+      "photo": "http://a5.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE1ODA0OTcxNjAxOTg3MDg1.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "225",
+      "height": "225",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyOOl6JsXeXph61FESCpPEG3clG9-LddmzHVRWXFx9IuaolvbsfX02r6s"
+     }
+    ],
+    "person": [
+     {
+      "image": "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE1ODA0OTcxNjAxOTg3MDg1.jpg",
+      "description": "Nine-time Grammy Award winner Miles Davis revolutionized jazz as a musician, bandleader and composer. Read more about his life and career, at Biography.com.",
+      "name": "Miles Davis",
+      "birthdate": "May 26, 1926",
+      "deathdate": "September 28, 1991",
+      "alumniof": "The Juilliard School (formerly the Institute of Musical Art)",
+      "additionalname": "Miles Davis"
+     }
+    ],
+    "metatags": [
+     {
+      "fragment": "!",
+      "handheldfriendly": "True",
+      "mobileoptimized": "320",
+      "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+      "apple-mobile-web-app-capable": "no",
+      "apple-mobile-web-app-status-bar-style": "black",
+      "format-detection": "telephone=no",
+      "pinterest": "nohover",
+      "pagetype": "person",
+      "item-id": "ci01a33b7a04e2860e",
+      "published": "2014-10-16T18:48:15+0000",
+      "modified": "2014-10-16T18:48:15+0000",
+      "dcterms.rightsholder": "Bio and the Bio logo are registered trademarks of A&E Television Networks, LLC.",
+      "dcterms.datecopyrighted": "2016",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@bio",
+      "twitter:url": "http://www.biography.com/people/miles-davis-9267992",
+      "twitter:image": "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE1ODA0OTcxNjAxOTg3MDg1.jpg",
+      "twitter:description": "Nine-time Grammy Award winner Miles Davis was a major force in the jazz world, as both a trumpet player and a bandleader.",
+      "twitter:domain": "www.biography.com",
+      "og:type": "website",
+      "og:url": "http://www.biography.com/people/miles-davis-9267992",
+      "og:title": "Miles Davis",
+      "og:description": "Nine-time Grammy Award winner Miles Davis was a major force in the jazz world, as both a trumpet player and a bandleader.",
+      "og:image": "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE1ODA0OTcxNjAxOTg3MDg1.jpg",
+      "og:site_name": "Biography",
+      "fb:pages": "123492867697144",
+      "fb:app_id": "104784826244596",
+      "pinterest-rich-pin": "true",
+      "apple-mobile-web-app-title": "Biography",
+      "parsely-title": "Miles Davis - Biography.com",
+      "parsely-link": "http://www.biography.com/people/miles-davis-9267992",
+      "parsely-image-url": "http://a5.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,h_300,q_80,w_400/MTE1ODA0OTcxNjAxOTg3MDg1.jpg",
+      "parsely-post-id": "ci01a33b7a04e2860e",
+      "parsely-pub-date": "2014-10-16T18:48:15+0000",
+      "phx:content-item-id": "ci01a33b7a04e2860e",
+      "phx:content-object-type": "ContentPerson"
+     }
+    ],
+    "videoobject": [
+     {
+      "thumbnailurl": "http://cp91279.biography.com/BIO_Bio-Shorts_0_Miles-Davis_150550_SF_HD_768x432-16x9.jpg",
+      "contenturl": "http://link.theplatform.com/s/xc6n8B/AJ_QfWFA2MAN?assetTypes=medium_video_ak&mbr=true&metafile=true&policy=29966",
+      "contentrating": "TV-14",
+      "name": "Miles Davis - Mini Biography",
+      "description": "Nine-time Grammy Award winner Miles Davis was a major force in the jazz world, as both a trumpet player and a bandleader. He is considered one of the top musicians of his era."
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE1ODA0OTcxNjAxOTg3MDg1.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis - So What - YouTube",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e - So What - YouTube",
+   "link": "https://www.youtube.com/watch?v=zqNTltOGh5c",
+   "displayLink": "www.youtube.com",
+   "snippet": "Oct 19, 2010 ... Miles Davis' official music video for 'So What'. Click to listen to Miles Davis on \nSpotify: http://smarturl.it/MDavisSpotify?IQid=MDSW As featured ...",
+   "htmlSnippet": "Oct 19, 2010 \u003cb\u003e...\u003c/b\u003e \u003cb\u003eMiles Davis\u003c/b\u003e&#39; official music video for &#39;So What&#39;. Click to listen to \u003cb\u003eMiles Davis\u003c/b\u003e on \u003cbr\u003e\nSpotify: http://smarturl.it/MDavisSpotify?IQid=MDSW As featured&nbsp;...",
+   "cacheId": "2Nrxj1j8rXwJ",
+   "formattedUrl": "https://www.youtube.com/watch?v=zqNTltOGh5c",
+   "htmlFormattedUrl": "https://www.youtube.com/watch?v=zqNTltOGh5c",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "300",
+      "height": "168",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9rHt_kmYNtj4U1-LHbvKu-fx-WJwVuuXQnpQfOVs8EJ_6lHoHJzWpW9P8"
+     }
+    ],
+    "imageobject": [
+     {
+      "url": "https://i.ytimg.com/vi/zqNTltOGh5c/maxresdefault.jpg",
+      "width": "1280",
+      "height": "720"
+     }
+    ],
+    "person": [
+     {
+      "url": "http://www.youtube.com/user/MilesDavisVEVO"
+     },
+     {
+      "url": "https://plus.google.com/107969598060082059552"
+     }
+    ],
+    "metatags": [
+     {
+      "title": "Miles Davis - So What",
+      "theme-color": "#e62117",
+      "og:site_name": "YouTube",
+      "og:url": "https://www.youtube.com/watch?v=zqNTltOGh5c",
+      "og:title": "Miles Davis - So What",
+      "og:image": "https://i.ytimg.com/vi/zqNTltOGh5c/maxresdefault.jpg",
+      "og:description": "Miles Davis' official music video for 'So What'. Click to listen to Miles Davis on Spotify: http://smarturl.it/MDavisSpotify?IQid=MDSW As featured on Kind of...",
+      "al:ios:app_store_id": "544007664",
+      "al:ios:app_name": "YouTube",
+      "al:ios:url": "vnd.youtube://www.youtube.com/watch?v=zqNTltOGh5c&feature=applinks",
+      "al:android:url": "vnd.youtube://www.youtube.com/watch?v=zqNTltOGh5c&feature=applinks",
+      "al:android:app_name": "YouTube",
+      "al:android:package": "com.google.android.youtube",
+      "al:web:url": "https://www.youtube.com/watch?v=zqNTltOGh5c&feature=applinks",
+      "og:type": "video",
+      "og:video:url": "https://www.youtube.com/embed/zqNTltOGh5c",
+      "og:video:secure_url": "https://www.youtube.com/embed/zqNTltOGh5c",
+      "og:video:type": "text/html",
+      "og:video:width": "640",
+      "og:video:height": "360",
+      "og:video:tag": "cool jazz"
+     }
+    ],
+    "videoobject": [
+     {
+      "url": "https://www.youtube.com/watch?v=zqNTltOGh5c",
+      "name": "Miles Davis - So What",
+      "description": "Miles Davis' official music video for 'So What'. Click to listen to Miles Davis on Spotify: http://smarturl.it/MDavisSpotify?IQid=MDSW As featured on Kind of...",
+      "paid": "False",
+      "channelid": "UC9NlE_veniVpnvpIegfifMQ",
+      "videoid": "zqNTltOGh5c",
+      "duration": "PT9M7S",
+      "unlisted": "False",
+      "thumbnailurl": "https://i.ytimg.com/vi/zqNTltOGh5c/maxresdefault.jpg",
+      "embedurl": "https://www.youtube.com/embed/zqNTltOGh5c",
+      "playertype": "HTML5 Flash",
+      "width": "640",
+      "height": "360",
+      "isfamilyfriendly": "True",
+      "regionsallowed": "AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES...",
+      "interactioncount": "5454410",
+      "datepublished": "2010-10-19",
+      "genre": "Music"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://i.ytimg.com/vi/zqNTltOGh5c/maxresdefault.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Don Cheadle: Why I Had to Make My Miles Davis Movie - Rolling ...",
+   "htmlTitle": "Don Cheadle: Why I Had to Make My \u003cb\u003eMiles Davis\u003c/b\u003e Movie - Rolling ...",
+   "link": "http://www.rollingstone.com/movies/news/don-cheadle-why-i-had-to-make-a-miles-davis-biopic-20160314",
+   "displayLink": "www.rollingstone.com",
+   "snippet": "Mar 14, 2016 ... 'Miles Ahead' star Don Cheadle talks Miles Davis, the boringness of \"cradle-to-\ngrave\" biopics and why he had to cast a white star in a candid ...",
+   "htmlSnippet": "Mar 14, 2016 \u003cb\u003e...\u003c/b\u003e &#39;Miles Ahead&#39; star Don Cheadle talks \u003cb\u003eMiles Davis\u003c/b\u003e, the boringness of &quot;cradle-to-\u003cbr\u003e\ngrave&quot; biopics and why he had to cast a white star in a candid&nbsp;...",
+   "cacheId": "u_vLJ3llJeMJ",
+   "formattedUrl": "www.rollingstone.com/.../don-cheadle-why-i-had-to-make-a-miles-davis- biopic-20160314",
+   "htmlFormattedUrl": "www.rollingstone.com/.../don-cheadle-why-i-had-to-make-a-\u003cb\u003emiles\u003c/b\u003e-\u003cb\u003edavis\u003c/b\u003e- biopic-20160314",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "310",
+      "height": "163",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ3CcXJ03G_zUUWEUW-Nfbhz5mC4bMllA67mX2KDJ_OImLoFQRd7vKVdNA"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1",
+      "news_keywords": "miles ahead reviews, miles davis biopic, don cheadle miles davis, music biopics, best movies of 2016, best miles davis albums, ewan mcgregor",
+      "msapplication-config": "//assets.wennermedia.com/rollingstone/static/browserconfig.xml",
+      "theme-color": "#c81429",
+      "fb:app_id": "144417125962063",
+      "og:type": "article",
+      "article:publisher": "https://www.facebook.com/RollingStone",
+      "article:tag": "Jazz",
+      "article:section": "Movies",
+      "og:title": "Don Cheadle: Why I Had to Make My Miles Davis Movie",
+      "og:site_name": "Rolling Stone",
+      "og:url": "http://www.rollingstone.com/movies/news/don-cheadle-why-i-had-to-make-a-miles-davis-biopic-20160314",
+      "og:description": "'Miles Ahead' star Don Cheadle talks Miles Davis, the boringness of \"cradle-to-grave\" biopics and why he had to cast a white star in a candid Q&A.",
+      "og:image": "http://img.wennermedia.com/social/rs-231974-GettyImages-506601904_.jpg",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@RollingStone",
+      "twitter:title": "Don Cheadle: Why I Had to Make My Miles Davis Movie",
+      "twitter:description": "'Miles Ahead' star Don Cheadle talks Miles Davis, the boringness of \"cradle-to-grave\" biopics and why he had to cast a white star in a candid Q&A.",
+      "twitter:image": "http://img.wennermedia.com/social/rs-231974-GettyImages-506601904_.jpg"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://img.wennermedia.com/social/rs-231974-GettyImages-506601904_.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis Discography at Discogs",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e Discography at Discogs",
+   "link": "https://www.discogs.com/artist/23755-Miles-Davis",
+   "displayLink": "www.discogs.com",
+   "snippet": "Complete your Miles Davis record collection. Discover Miles Davis's full \ndiscography. Shop new and used Vinyl and CDs.",
+   "htmlSnippet": "Complete your \u003cb\u003eMiles Davis\u003c/b\u003e record collection. Discover \u003cb\u003eMiles Davis&#39;s\u003c/b\u003e full \u003cbr\u003e\ndiscography. Shop new and used Vinyl and CDs.",
+   "cacheId": "aykLu_0BJIIJ",
+   "formattedUrl": "https://www.discogs.com/artist/23755-Miles-Davis",
+   "htmlFormattedUrl": "https://www.discogs.com/artist/23755-\u003cb\u003eMiles\u003c/b\u003e-\u003cb\u003eDavis\u003c/b\u003e",
+   "pagemap": {
+    "offer": [
+     {
+      "availability": "http://schema.org/InStock"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "225",
+      "height": "225",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRecV-Tgcj9rKwLHD6N5nFN97yDVpRqvTdiqAAE8-c-wn_b9DUvbI0ILQ4"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "initial-scale=1.0,width=device-width",
+      "og:url": "http://www.discogs.com/artist/23755-Miles-Davis",
+      "og:site_name": "Discogs",
+      "twitter:card": "summary",
+      "og:type": "musician",
+      "fb:app_id": "117175028305858",
+      "og:title": "Miles Davis",
+      "twitter:site": "@discogs",
+      "og:image": "https://img.discogs.com/c4YdLACdIKVJoQOS56Sa6-tHBP4=/304x304/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-23755-1394387343-4500.jpeg.jpg",
+      "og:description": "Trumpeter, bandleader, composer, and one of the most important figures in jazz music history, and music history in general.     Born: 26 May 1926 in Alton, Illinois, USA.   Died: 28 September 1991 in Santa Monica, California, USA (aged 65).     Best known for his seminal modern jazz album \"Kind ..."
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://img.discogs.com/c4YdLACdIKVJoQOS56Sa6-tHBP4=/304x304/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-23755-1394387343-4500.jpeg.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis — Listen for free on Spotify",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e — Listen for free on Spotify",
+   "link": "https://open.spotify.com/artist/0kbYTNQb4Pb1rPbbaF0pT4",
+   "displayLink": "open.spotify.com",
+   "snippet": "Throughout a professional career lasting 50 years, Miles Davis played the \ntrumpet in a lyrical, introspective, and melodic style, often employing a stemless ...",
+   "htmlSnippet": "Throughout a professional career lasting 50 years, \u003cb\u003eMiles Davis\u003c/b\u003e played the \u003cbr\u003e\ntrumpet in a lyrical, introspective, and melodic style, often employing a stemless&nbsp;...",
+   "cacheId": "mBZvy0OP5HoJ",
+   "formattedUrl": "https://open.spotify.com/artist/0kbYTNQb4Pb1rPbbaF0pT4",
+   "htmlFormattedUrl": "https://open.spotify.com/artist/0kbYTNQb4Pb1rPbbaF0pT4",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "183",
+      "height": "275",
+      "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSD_od06nQigCHcjmk4vnlfIDtRLU1meDPeQrxpxeSAE5czKzFDndUpHQM"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+      "og:site_name": "Spotify",
+      "fb:app_id": "174829003346",
+      "og:title": "Miles Davis",
+      "og:description": "Throughout a professional career lasting 50 years, Miles Davis played the trumpet in a lyrical, introspective, and melodic style, often employing a stemless Harmon mute to make his sound more personal and intimate.",
+      "og:url": "https://open.spotify.com/artist/0kbYTNQb4Pb1rPbbaF0pT4",
+      "og:image": "https://i.scdn.co/image/b1a46506d9efc8a783db76e3d059ce2ffdd33f92",
+      "og:type": "music.musician",
+      "twitter:image:src": "https://i.scdn.co/image/b1a46506d9efc8a783db76e3d059ce2ffdd33f92",
+      "twitter:audio:partner": "Spotify",
+      "twitter:title": "Miles Davis",
+      "twitter:app:id:iphone": "324684580",
+      "twitter:app:id:googleplay": "com.spotify.music",
+      "twitter:site": "@spotify",
+      "twitter:description": "Throughout a professional career lasting 50 years, Miles Davis played the trumpet in a lyrical, introspective, and melodic style, often employing a stemless Harmon mute to make his sound more personal and intimate.",
+      "twitter:player:height": "532",
+      "twitter:player:width": "504",
+      "twitter:card": "audio",
+      "twitter:audio:artist_name": "Miles Davis",
+      "twitter:player": "https://open.spotify.com/embed/artist/0kbYTNQb4Pb1rPbbaF0pT4?utm_campaign=twitter-player&utm_source=open&utm_medium=twitter",
+      "twitter:audio:source": "https://open.spotify.com/twitter/vmap/artist/0kbYTNQb4Pb1rPbbaF0pT4?utm_campaign=twitter-player&utm_source=open&utm_medium=twitter",
+      "al:android:app_name": "Spotify",
+      "al:android:package": "com.spotify.music",
+      "al:android:url": "spotify://artist/0kbYTNQb4Pb1rPbbaF0pT4",
+      "al:ios:app_name": "Spotify",
+      "al:ios:app_store_id": "324684580",
+      "al:ios:url": "spotify:artist:0kbYTNQb4Pb1rPbbaF0pT4"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://i.scdn.co/image/b1a46506d9efc8a783db76e3d059ce2ffdd33f92"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Inside Miles Davis' Prince Obsession, As Detailed By Davis' Family ...",
+   "htmlTitle": "Inside \u003cb\u003eMiles Davis\u003c/b\u003e&#39; Prince Obsession, As Detailed By Davis&#39; Family ...",
+   "link": "http://pitchfork.com/thepitch/1114-inside-miles-davis-prince-obsession-as-detailed-by-davis-family-and-collaborators/",
+   "displayLink": "pitchfork.com",
+   "snippet": "Apr 22, 2016 ... When Miles Davis began recording new music again in 1981, it wasn't too long \nbefore he recognized the future in a young funk rocker out of ...",
+   "htmlSnippet": "Apr 22, 2016 \u003cb\u003e...\u003c/b\u003e When \u003cb\u003eMiles Davis\u003c/b\u003e began recording new music again in 1981, it wasn&#39;t too long \u003cbr\u003e\nbefore he recognized the future in a young funk rocker out of&nbsp;...",
+   "cacheId": "IRh0wxlim_AJ",
+   "formattedUrl": "pitchfork.com/.../1114-inside-miles-davis-prince-obsession-as-detailed-by- davis-family-and-collaborators/",
+   "htmlFormattedUrl": "pitchfork.com/.../1114-inside-\u003cb\u003emiles\u003c/b\u003e-\u003cb\u003edavis\u003c/b\u003e-prince-obsession-as-detailed-by- \u003cb\u003edavis\u003c/b\u003e-family-and-collaborators/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "318",
+      "height": "159",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ4ogfFn0HINhCo-WXcv5OHtRy9X9Wo5NPYF_om4ZMUc8KYID0aNMKwbaQ"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1.0, user-scalable=no",
+      "og:site_name": "Pitchfork",
+      "og:url": "http://pitchfork.com",
+      "og:title": "Inside Miles Davis’ Prince Obsession, As Detailed By Davis’ Family and Collaborators",
+      "og:description": "Pitchfork spoke with some of Davis’ loved ones and dearest collaborators for a deeper look into how Prince influenced Miles' final decade.",
+      "og:type": "article",
+      "og:image": "http://cdn2.pitchfork.com/blog/1114/d5e00dec.jpg",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@pitchfork",
+      "twitter:title": "Inside Miles Davis’ Prince Obsession, As Detailed By Davis’ Family and Collaborators",
+      "twitter:description": "Pitchfork spoke with some of Davis’ loved ones and dearest collaborators for a deeper look into how Prince influenced Miles' final decade.",
+      "twitter:image": "http://cdn2.pitchfork.com/blog/1114/d5e00dec.jpg"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://cdn2.pitchfork.com/blog/1114/d5e00dec.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Miles Davis | Facebook",
+   "htmlTitle": "\u003cb\u003eMiles Davis\u003c/b\u003e | Facebook",
+   "link": "https://www.facebook.com/MilesDavis/",
+   "displayLink": "www.facebook.com",
+   "snippet": "Miles Davis. 2131974 likes · 4267 talking about this. www.milesdavis.com.",
+   "htmlSnippet": "\u003cb\u003eMiles Davis\u003c/b\u003e. 2131974 likes · 4267 talking about this. www.\u003cb\u003emilesdavis\u003c/b\u003e.com.",
+   "cacheId": "32Cf33U9Lb4J",
+   "formattedUrl": "https://www.facebook.com/MilesDavis/",
+   "htmlFormattedUrl": "https://www.facebook.com/\u003cb\u003eMilesDavis\u003c/b\u003e/",
+   "pagemap": {
+    "metatags": [
+     {
+      "referrer": "default",
+      "al:android:app_name": "Facebook",
+      "al:android:package": "com.facebook.katana",
+      "al:android:url": "fb://page/57796847423",
+      "al:ios:app_name": "Facebook",
+      "al:ios:app_store_id": "284882215",
+      "al:ios:url": "fb://page/?id=57796847423"
+     }
+    ]
+   }
+  }
+ ]
+}

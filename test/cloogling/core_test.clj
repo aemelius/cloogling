@@ -35,7 +35,7 @@
             (:snippet))
         )
 
-;; now some slightly edgier cases
+;; now some slightly edgier cases for Bing
 
 ;; if the data is not a valid json, I expect an empty list to be returned
 (expect [] (get-entries "this is not a valid bing like json"))
@@ -48,4 +48,14 @@
 
 ;; valid json, it contains a list of entries in the right place, but the keys are not what expected from Bing
 (expect [] (get-entries (slurp "test/cloogling/bad_data_bing_3.json")))
+
+
+;; now some Google stuff
+
+;; setup: load a standard json response from Google, with 10 entries
+(def miles_davis_data_google (slurp "test/cloogling/miles_davis_google.json"))
+
+;; Counting entries in standard test data
+(expect 10 (count (get-entries miles_davis_data_google :google)))
+
 
