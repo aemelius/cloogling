@@ -30,9 +30,7 @@
   (
     [x]
     (remove nil? (map create-entry (try
-                                     (if (-> x
-                                             json/read-str
-                                             access-to-data-google)
+                                     (or
                                        (-> x
                                            json/read-str
                                            access-to-data-google)
