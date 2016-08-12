@@ -32,7 +32,7 @@
   (get-in x  ["d" "results"])
   )
 
-(defn get-entries-generic
+(defn get-entries
   (
     [x f]
     (remove nil? (map creator (try
