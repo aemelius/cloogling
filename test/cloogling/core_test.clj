@@ -45,6 +45,9 @@
 ;; valid json, it contains a list of entries in the right place, but the keys are not what expected from Bing
 (expect [] (get-entries    (slurp "test/cloogling/bad_data_bing_3.json")))
 
+;; valid json, it contains a list of entries in the right place, but the keys are not what expected from Bing - case 2
+(expect [] (get-entries    (slurp "test/cloogling/bad_data_bing_4.json")))
+
 ;; now some Google stuff
 
 ;; setup: load a standard json response from Google, with 10 entries

@@ -2,7 +2,6 @@
   (:require [clojure.data.json :as json]))
 
 (defrecord entry [url title snippet])
-
 (defn create-entry
   [x]
   (let [bing (->entry (x "Url" ) (x "Title") (x "Description"))
@@ -10,7 +9,9 @@
 
     (if (and (:url bing) (:title bing) (:snippet bing))
       bing
+      (if (and (:url google) (:title google) (:snippet google))
       google
+      nil)
       )
 
     )
