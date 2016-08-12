@@ -17,6 +17,8 @@ I used the following resources to gather a basic understanding of the language:
 
 ## Tools of the craft
 
+- Lighttable
+
 ## License
 
 Copyright © 2016 Simone Bruno

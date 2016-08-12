@@ -9,22 +9,13 @@
         google (->entry (x "link" ) (x "title") (x "snippet") ) ]
 
     (if (and (:url bing) (:title bing) (:snippet bing))
-            bing
-            google
-            )
+      bing
+      google
+      )
 
     )
   )
 
-(defn- access-to-data-google
-  [x]
-  (get-in x ["items"])
-  )
-
-(defn- access-to-data-bing
-  [x]
-  (get-in x  ["d" "results"])
-  )
 
 (defn get-entries
   (
@@ -33,10 +24,10 @@
                                      (or
                                        (-> x
                                            json/read-str
-                                           access-to-data-google)
+                                           (get-in  ["d" "results"]))
                                        (-> x
                                            json/read-str
-                                           access-to-data-bing))
+                                           (get-in ["items"])))
                                      (catch Exception e (empty nil))
                                      )
                       )))
