@@ -3,22 +3,23 @@
 
 (defrecord entry [url title snippet])
 
+(defn creator
+  [x]
+  (if (and (x "Url") (x "Title") (x "Description"))
+    (try
+      (->entry (x "Url" ) (x "Title") (x "Description"))
+      (catch IllegalArgumentException e nil)
+      )
 
-(defn create-entry
- [x]
-  (try
-    (->entry (x "Url" ) (x "Title") (x "Description"))
-    (catch IllegalArgumentException e nil)
-    )
-)
+    (try
+      (->entry (x "link" ) (x "title") (x "snippet"))
+      (catch IllegalArgumentException e nil)
+      )
 
-(defn create-entry-google
- [x]
-  (try
-    (->entry (x "link" ) (x "title") (x "snippet"))
-    (catch IllegalArgumentException e nil)
+
     )
-)
+
+  )
 
 
 (defn g
@@ -33,14 +34,14 @@
 
 (defn get-entries-generic
   (
-  [x f create]
-  (remove nil? (map create (try
-                                   (-> x
-                                       json/read-str
-                                       f)
-                                   (catch Exception e (empty nil))
-                                   )
-                    )))
+    [x f]
+    (remove nil? (map creator (try
+                                (-> x
+                                    json/read-str
+                                    f)
+                                (catch Exception e (empty nil))
+                                )
+                      )))
 
   )
 
