@@ -1,6 +1,8 @@
 (ns cloogling.core-test
   (:require [cloogling.core :refer :all]
-            [expectations :refer :all]))
+            [expectations :refer :all]
+            [clj-http.client :as http])
+  (:use clj-http.fake))
 
 ;; starting with parsing Bing-style results, with non-edge cases
 
@@ -73,4 +75,15 @@
             get-entries
             first
             (:snippet)))
+
+
+(with-fake-routes
+           { ( str "https://www.googleapis.com/customsearch/v1?num=10&cx=" (slurp "test/cloogling/google_engine-id.txt") "&key=" (slurp "test/cloogling/google_api-key.txt") "&q=Miles%20Davis")
+            (fn [request]
+              {:status 200 :headers {} :body (slurp "test/cloogling/miles_davis_google.json" )})}
+           (expect 10 (count (google-query "Miles Davis")))
+  )
+
+;;https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query=%27Miles%20Davis%27&$format=json
+
 
