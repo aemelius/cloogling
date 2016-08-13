@@ -117,22 +117,63 @@
 
 ;; testing the comparison of results from google and bing
 
+
 ;; let's begin with a simple case; duplicated entries are removed from the bing result;
 ;; google results come first
+(let [ google [(->entry "a" "a" "a") (->entry "b" "x" "sdfsdf") (->entry "d" "sdf" "dasd")]
+       bing [(->entry "a" "as" "a") (->entry "b" "ds" "d") (->entry "c" "c" "c")]]
+
+
+  (expect [ "a" "b" "d" "c"]
+          (map (fn [x] (:url x ))(get-aggregated-result google bing))
+          )
+  )
+;; let's get edgy...
+
+(let [ google [(->entry "a" "x" "a") (->entry "b" "5" "b") (->entry "d" "d" "d")]
+       bing []]
+
+  (expect [ "a" "b" "d"]
+          (map (fn [x] (:url x ))(get-aggregated-result google bing))
+          )
+  )
+
+
+(let [ google []
+       bing []]
+
+  (expect [ ]
+          (map (fn [x] (:url x ))(get-aggregated-result google bing))
+          )
+  )
+
+(let [ google nil
+       bing nil]
+
+  (expect [ ]
+          (map (fn [x] (:url x ))(get-aggregated-result google bing))
+          )
+  )
+
 (let [ google [(->entry "a" "a" "a") (->entry "b" "b" "b") (->entry "d" "d" "d")]
-       bing [(->entry "a" "a" "a") (->entry "b" "b" "b") (->entry "c" "c" "c")]]
+       bing []]
 
-   (expect [ "a" "b" "d" "c"]
-           (map (fn [x] (:url x ))(get-aggregated-result google bing))
-    )
-
-)
-
+  (expect [ "a" "b" "d"]
+          (map (fn [x] (:url x ))(get-aggregated-result google bing))
+          )
+  )
 
 
+;; double-check that result from google is privileged in case of duplications
+(let [ google [(->entry "a" "from google" "a") (->entry "b" "from google" "b")]
+       bing [(->entry "a" "from bing" "a") (->entry "b" "from bing" "b") (->entry "c" "from bing" "b")]
+       aggregated_result (get-aggregated-result google bing)]
 
-
-
+  (expect 3 (count aggregated_result)  )
+  (expect "from google"(:title (first aggregated_result)))
+  (expect "from google"(:title (second aggregated_result)))
+  (expect "from bing"(:title (nth aggregated_result 2 )))
+  )
 
 
 

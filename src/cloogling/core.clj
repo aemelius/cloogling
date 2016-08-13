@@ -13,8 +13,8 @@
     (if (and (:url bing) (:title bing) (:snippet bing))
       bing
       (if (and (:url google) (:title google) (:snippet google))
-      google
-      nil)
+        google
+        nil)
       )
 
     )
@@ -42,35 +42,51 @@
   [engine-id api-key x]
   (if (or (= x nil) (= x ""))
     (throw (Exception. "Null search keys confuse me."))
-  (str "https://www.googleapis.com/customsearch/v1?num=10&cx="
-       engine-id
-       "&key="
-       api-key
-       "&q="
-       (url-encode x)
+    (str "https://www.googleapis.com/customsearch/v1?num=10&cx="
+         engine-id
+         "&key="
+         api-key
+         "&q="
+         (url-encode x)
+         )
+    )
   )
-  )
-)
 
 (defn get-bing-query
   [x]
   (if (or (= x nil) (= x ""))
     (throw (Exception. "Null search keys confuse me."))
-  (str "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query="
-       (url-encode x)
-       "&$format=json"
+    (str "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query="
+         (url-encode x)
+         "&$format=json"
+         )
+    )
   )
+
+(defn get-url
+  [x]
+  (:url x))
+
+(defn get-common-urls
+  [one two]
+  (remove nil?   (concat (map get-url one)
+                         (-> (diff (map get-url one) (map get-url two))
+                             (nth 2) ;; urls only in two
+                             )))
   )
-)
 
 (defn get-aggregated-result
   [one two]
-  (concat one (remove nil? (-> (diff one two)
-                                (nth 1)
-                           )
-                      )
+
+  (concat one
+          (for [item two
+                :when (not-any? (fn [x] (= (:url item) x )) (get-common-urls one two) )]
+            item )
           )
   )
+
+
+
 
 
 
