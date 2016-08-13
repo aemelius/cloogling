@@ -115,7 +115,18 @@
   (catch Exception e nil)
   )
 
+;; testing the comparison of results from google and bing
 
+;; let's begin with a simple case; duplicated entries are removed from the bing result;
+;; google results come first
+(let [ google [(->entry "a" "a" "a") (->entry "b" "b" "b") (->entry "d" "d" "d")]
+       bing [(->entry "a" "a" "a") (->entry "b" "b" "b") (->entry "c" "c" "c")]]
+
+   (expect [ "a" "b" "d" "c"]
+           (map (fn [x] (:url x ))(get-aggregated-result google bing))
+    )
+
+)
 
 
 

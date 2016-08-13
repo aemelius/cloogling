@@ -2,6 +2,8 @@
   (:require [clojure.data.json :as json]
             [cemerick.url :refer (url url-encode)]))
 
+(use 'clojure.data)
+
 (defrecord entry [url title snippet])
 (defn create-entry
   [x]
@@ -60,6 +62,15 @@
   )
   )
 )
+
+(defn get-aggregated-result
+  [one two]
+  (concat one (remove nil? (-> (diff one two)
+                                (nth 1)
+                           )
+                      )
+          )
+  )
 
 
 
