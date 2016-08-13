@@ -1,5 +1,6 @@
 (ns cloogling.core
-  (:require [clojure.data.json :as json]))
+  (:require [clojure.data.json :as json]
+            [cemerick.url :refer (url url-encode)]))
 
 (defrecord entry [url title snippet])
 (defn create-entry
@@ -34,6 +35,20 @@
                       )))
 
   )
+
+(defn get-google-query
+  [engine-id api-key x]
+  (if (or (= x nil) (= x ""))
+    (throw (Exception. "Null search keys confuse me."))
+  (str "https://www.googleapis.com/customsearch/v1?num=10&cx="
+       engine-id
+       "&key="
+       api-key
+       "&q="
+       (url-encode x)
+  )
+  )
+)
 
 
 

@@ -2,6 +2,7 @@
   (:require [cloogling.core :refer :all]
             [expectations :refer :all]))
 
+(require '[clojure.string :as str])
 ;; starting with parsing Bing-style results, with non-edge cases
 
 ;; setup: load a standard json response from Bing, with 10 entries
@@ -76,4 +77,25 @@
             get-entries
             first
             (:snippet)))
+
+;; testing the generation of the url to query the google api
+(expect "https://www.googleapis.com/customsearch/v1?num=10&cx=abcd&key=1234&q=Miles%20Davis"
+        (get-google-query "abcd" "1234" "Miles Davis"))
+
+;; if you query nothing, I am not going to go on
+(try
+  (and (get-google-query "abcd" "1234" nil) (expect "An exception should have been raised in case of nil search key" "No exception raised" ))
+  (catch Exception e nil)
+  )
+
+;; an empty string is like querying nothing
+(try
+  (and (get-google-query "abcd" "1234" "") (expect "An exception should have been raised in case of empty search key" "No exception raised" ))
+  (catch Exception e nil)
+  )
+
+
+
+
+
 
