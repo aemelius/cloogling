@@ -127,6 +127,7 @@
   (expect [ "a" "b" "d" "c"]
           (map (fn [x] (:url x ))(get-aggregated-result google bing))
           )
+
   )
 ;; let's get edgy...
 
@@ -164,15 +165,15 @@
   )
 
 
-;; double-check that result from google is privileged in case of duplications
+;; double-check that result from google is privileged in case of duplication
 (let [ google [(->entry "a" "from google" "a") (->entry "b" "from google" "b")]
        bing [(->entry "a" "from bing" "a") (->entry "b" "from bing" "b") (->entry "c" "from bing" "b")]
        aggregated_result (get-aggregated-result google bing)]
 
   (expect 3 (count aggregated_result)  )
-  (expect "from google"(:title (first aggregated_result)))
-  (expect "from google"(:title (second aggregated_result)))
-  (expect "from bing"(:title (nth aggregated_result 2 )))
+  (expect "from google"(:title (nth aggregated_result 0)))
+  (expect "from google"(:title (nth aggregated_result 1)))
+  (expect "from bing"  (:title (nth aggregated_result 2)))
   )
 
 
