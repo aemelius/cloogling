@@ -80,7 +80,7 @@
 
   (concat one
           (for [item two
-                :when (not-any? (fn [x] (= (:url item) x )) (get-common-urls one two) )]
+                :when (not-any? (fn [x] (= (:url item) (:url x) )) one )]
             item )
           )
   )
