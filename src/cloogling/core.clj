@@ -50,6 +50,19 @@
   )
 )
 
+(defn get-bing-query
+  [x]
+  (if (or (= x nil) (= x ""))
+    (throw (Exception. "Null search keys confuse me."))
+  (str "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query="
+       (url-encode x)
+       "&$format=json"
+  )
+  )
+)
+
+
+
 
 
 

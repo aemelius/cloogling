@@ -3,10 +3,17 @@
             [expectations :refer :all]))
 
 (require '[clojure.string :as str])
-;; starting with parsing Bing-style results, with non-edge cases
+
 
 ;; setup: load a standard json response from Bing, with 10 entries
 (def miles_davis_data (slurp "test/cloogling/miles_davis_bing.json"))
+
+;; setup: load a standard json response from Google, with 10 entries
+(def miles_davis_data_google (slurp "test/cloogling/miles_davis_google.json"))
+
+
+;; starting with parsing Bing-style results, with non-edge cases
+
 
 ;; Counting entries in standard test data
 (expect 10 (count (get-entries    miles_davis_data)))
@@ -51,8 +58,6 @@
 
 ;; now some Google stuff
 
-;; setup: load a standard json response from Google, with 10 entries
-(def miles_davis_data_google (slurp "test/cloogling/miles_davis_google.json"))
 
 ;; Counting entries in standard test data
 (expect 10 (count (get-entries    miles_davis_data_google)))
@@ -93,6 +98,28 @@
   (and (get-google-query "abcd" "1234" "") (expect "An exception should have been raised in case of empty search key" "No exception raised" ))
   (catch Exception e nil)
   )
+
+
+;; testing the generation of the url to query the google api
+(expect "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query=Miles%20Davis&$format=json"
+        (get-bing-query "Miles Davis"))
+
+;; Againg, if you query nothing or an empty string, I am not going to go on
+(try
+  (and (get-bing-query nil) (expect "An exception should have been raised in case of nil search key" "No exception raised" ))
+  (catch Exception e nil)
+  )
+
+(try
+  (and (get-bing-query "") (expect "An exception should have been raised in case of empty search key" "No exception raised" ))
+  (catch Exception e nil)
+  )
+
+
+
+
+
+
 
 
 
