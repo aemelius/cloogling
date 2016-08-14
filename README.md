@@ -17,7 +17,7 @@ Please see the `output_samples` folder.
 
 # How to run Cloogling
 
-With leiningen, of course.
+With [leiningen](http://leiningen.org/ "Leiningen"), of course.
 
 ### Step 1: run the tests
 
