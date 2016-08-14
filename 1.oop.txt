@@ -1,0 +1,120 @@
+https://en.wikipedia.org/wiki/Object-oriented_programming
+	Title: "Object-oriented programming - Wikipedia, the free encyclopedia"
+	Snippet: "Object-oriented programming (OOP) is a programming paradigm based on the 
+concept of "objects", which may contain data, in the form of fields, often known as
+ ..."
+	from: google
+
+http://searchsoa.techtarget.com/definition/object-oriented-programming
+	Title: "What is object-oriented programming (OOP)? - Definition from ..."
+	Snippet: "Object-oriented programming (OOP) is a programming language model 
+organized around objects rather than "actions" and data rather than logic. 
+Historically, a ..."
+	from: google
+
+https://docs.oracle.com/javase/tutorial/java/concepts
+	Title: "Lesson: Object-Oriented Programming Concepts (The Java ..."
+	Snippet: "If you've never used an object-oriented programming language before, you'll 
+need to learn a few basic concepts before you can begin writing any code."
+	from: google
+
+https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53
+	Title: "Goodbye, Object Oriented Programming — Medium"
+	Snippet: "I've been programming in Object Oriented languages for decades. The first OO 
+language I used was C++ and then Smalltalk and finally .NET…"
+	from: google
+
+http://www.webopedia.com/TERM/O/object_oriented_programming_OOP.html
+	Title: "What is Object-Oriented Programming? Webopedia Definition"
+	Snippet: "Object-oriented programming (OOP) refers to a type of computer programming (
+software design) in which programmers define not only the data type of a data ..."
+	from: google
+
+https://www.youtube.com/watch?v=lbXsrHGhBAU
+	Title: "Object-Oriented Programming - YouTube"
+	Snippet: "Nov 3, 2012 ... Part of a larger series teaching programming. See http://codeschool.org/"
+	from: google
+
+https://www.edx.org/course/object-oriented-programming-iitbombayx-cs101-2x
+	Title: "Object-Oriented Programming | edX"
+	Snippet: "Go beyond the basics of programming to understand object-oriented 
+methodology, the approach to modular and reusable software systems. Topics 
+Include:."
+	from: google
+
+http://www.mathworks.com/discovery/object-oriented-programming.html
+	Title: "Object-Oriented Programming in MATLAB - MATLAB"
+	Snippet: "Learn how to use object-oriented programming in MATLAB. Resources include 
+videos, examples, and documentation covering the definition of classes and ..."
+	from: google
+
+https://www.coursera.org/learn/object-oriented-java
+	Title: "Object Oriented Programming in Java - University of California, San ..."
+	Snippet: "Welcome to our course on Object Oriented Programming in Java using data 
+visualization. People come to this course with many different goals -- and we are
+ ..."
+	from: google
+
+https://en.wikibooks.org/wiki/Object_Oriented_Programming
+	Title: "Object Oriented Programming - Wikibooks, open books for an open ..."
+	Snippet: "Object Oriented Programming (OOP) means any kind of programming that uses a 
+programming language with some object oriented constructs or programming ..."
+	from: google
+
+
+	Title: "Windsor - Brisbane Motorcycles"
+	Snippet: "Windsor - Brisbane Motorcycles"
+	from: bing
+
+https://docs.oracle.com/javase/tutorial/java/concepts/
+	Title: "Lesson: Object-Oriented Programming Concepts (The Java ..."
+	Snippet: "If you've never used an object-oriented programming language before, you'll need to learn a few basic concepts before you can begin writing any code."
+	from: bing
+
+https://msdn.microsoft.com/en-us/library/dd460654.aspx
+	Title: "Object-Oriented Programming (C# and Visual Basic)"
+	Snippet: "Visual Basic and C# share many common concepts, but with often subtle differences. Where previous versions of the documentation presented shared concepts in topics ..."
+	from: bing
+
+http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-01sc-introduction-to-electrical-engineering-and-computer-science-i-spring-2011/unit-1-software-engineering/object-oriented-programming/
+	Title: "Object-Oriented Programming | Unit 1: Software Engineering ..."
+	Snippet: "In this session, we introduce you to some of the core concepts of 6.01. We will also focus on programming, in particular the object-oriented programming paradigm in ..."
+	from: bing
+
+https://docs.oracle.com/javase/tutorial/java/concepts/object.html
+	Title: "What Is an Object? (The Java™ Tutorials > Learning the ..."
+	Snippet: "What Is an Object? What Is a Class? What Is Inheritance? ... These real-world observations all translate into the world of object-oriented programming."
+	from: bing
+
+https://www.cs.kent.ac.uk/~djb/oop/
+	Title: "Object-Oriented Programming with Java - An Introduction"
+	Snippet: "Welcome to This Site. This site contains materials associated with my book: Object-Oriented Programming with Java: An Introduction, ISBN: 0-13-086900-7, published by ..."
+	from: bing
+ 
+-------------------------
+
+ The following results were duplicated in Bing:
+
+ https://en.wikipedia.org/wiki/Object-oriented_programming
+	Title: "Object-oriented programming - Wikipedia, the free encyclopedia"
+	Snippet: "Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as ..."
+	from: bing
+
+http://www.webopedia.com/TERM/O/object_oriented_programming_OOP.html
+	Title: "What is Object-Oriented Programming? Webopedia Definition"
+	Snippet: "Object-oriented programming (OOP) refers to a type of computer programming (software design) in which programmers define not only the data type of a data structure ..."
+	from: bing
+
+https://en.wikibooks.org/wiki/Object_Oriented_Programming
+	Title: "Object Oriented Programming - Wikibooks"
+	Snippet: "Object Oriented Programming (OOP) means any kind of programming that uses a programming language with some object oriented constructs or programming in an environment ..."
+	from: bing
+
+https://www.edx.org/course/object-oriented-programming-iitbombayx-cs101-2x
+	Title: "Object-Oriented Programming | edX"
+	Snippet: "Learn the principles of programming for building large and extensible systems."
+	from: bing
+ 
+-------------------------
+
+ A simple similarity metric (does not consider results order):  40.000001%

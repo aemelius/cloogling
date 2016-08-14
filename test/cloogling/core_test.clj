@@ -120,8 +120,8 @@
 
 ;; let's begin with a simple case; duplicated entries are removed from the bing result;
 ;; google results come first
-(let [ google [(->entry "a" "a" "a") (->entry "b" "x" "sdfsdf") (->entry "d" "sdf" "dasd")]
-       bing [(->entry "a" "as" "a") (->entry "b" "ds" "d") (->entry "c" "c" "c")]]
+(let [ google [(->entry "a" "a" "a" "engine") (->entry "b" "x" "sdfsdf" "engine") (->entry "d" "sdf" "dasd"  "engine")]
+       bing [(->entry "a" "as" "a"  "engine") (->entry "b" "ds" "d" "engine") (->entry "c" "c" "c" "engine")]]
 
 
   (expect [ "a" "b" "d" "c"]
@@ -131,7 +131,7 @@
   )
 ;; let's get edgy...
 
-(let [ google [(->entry "a" "x" "a") (->entry "b" "5" "b") (->entry "d" "d" "d")]
+(let [ google [(->entry "a" "x" "a" "engine") (->entry "b" "5" "b" "engine") (->entry "d" "d" "d" "engine")]
        bing []]
 
   (expect [ "a" "b" "d"]
@@ -156,7 +156,7 @@
           )
   )
 
-(let [ google [(->entry "a" "a" "a") (->entry "b" "b" "b") (->entry "d" "d" "d")]
+(let [ google [(->entry "a" "a" "a" "engine") (->entry "b" "b" "b" "engine") (->entry "d" "d" "d" "engine")]
        bing []]
 
   (expect [ "a" "b" "d"]
@@ -166,14 +166,14 @@
 
 
 ;; double-check that result from google is privileged in case of duplication
-(let [ google [(->entry "a" "from google" "a") (->entry "b" "from google" "b")]
-       bing [(->entry "a" "from bing" "a") (->entry "b" "from bing" "b") (->entry "c" "from bing" "b")]
+(let [ google [(->entry "a" "from google" "a" "google") (->entry "b" "from google" "b" "google")]
+       bing [(->entry "a" "from bing" "a" "bing") (->entry "b" "from bing" "b" "bing") (->entry "c" "from bing" "b" "bing")]
        aggregated_result (get-aggregated-result google bing)]
 
   (expect 3 (count aggregated_result)  )
-  (expect "from google"(:title (nth aggregated_result 0)))
-  (expect "from google"(:title (nth aggregated_result 1)))
-  (expect "from bing"  (:title (nth aggregated_result 2)))
+  (expect "google"(:engine (nth aggregated_result 0)))
+  (expect "google"(:engine (nth aggregated_result 1)))
+  (expect "bing"  (:engine (nth aggregated_result 2)))
   )
 
 ;; reading properties from a config file
@@ -188,8 +188,8 @@
 
 
 
-(let [ google [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a") (->entry "https://www.milesdavis.com/" "5" "b") (->entry "d" "d" "d")]
-       bing [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a") (->entry "https://www.milesdavis.com/" "5" "b") (->entry "c" "c" "c")]]
+(let [ google [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a"  "engine") (->entry "https://www.milesdavis.com/" "5" "b" "engine") (->entry "d" "d" "d" "engine")]
+       bing [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a" "engine") (->entry "https://www.milesdavis.com/" "5" "b" "engine") (->entry "c" "c" "c" "engine")]]
 
 
   (get-printable-result google)
@@ -211,15 +211,15 @@
   ))
 )
 
-(expect (get-url-for-comparison (->entry "http://abc.com" "jadksdhak" "aksjdhaks"))
-        (get-url-for-comparison (->entry "https://abc.com" "abc" "dfsdf") )
+(expect (get-url-for-comparison (->entry "http://abc.com" "jadksdhak" "aksjdhaks" "engine"))
+        (get-url-for-comparison (->entry "https://abc.com" "abc" "dfsdf" "engine") )
         )
-(expect (get-url-for-comparison (->entry "http://www.johncoltrane.com/" "jadksdhak" "aksjdhaks"))
-        (get-url-for-comparison (->entry "http://johncoltrane.com/" "abc" "dfsdf") )
+(expect (get-url-for-comparison (->entry "http://www.johncoltrane.com/" "jadksdhak" "aksjdhaks" "engine"))
+        (get-url-for-comparison (->entry "http://johncoltrane.com/" "abc" "dfsdf" "engine") )
         )
 
-(expect (get-url-for-comparison (->entry "https://www.abc.com" "jadksdhak" "aksjdhaks"))
-        (get-url-for-comparison (->entry "http://abc.com" "abc" "dfsdf") )
+(expect (get-url-for-comparison (->entry "https://www.abc.com" "jadksdhak" "aksjdhaks" "engine"))
+        (get-url-for-comparison (->entry "http://abc.com" "abc" "dfsdf" "engine") )
         )
 
 

@@ -9,7 +9,7 @@
 (use 'clojure.java.io)
 
 
-(defrecord entry [url title snippet])
+(defrecord entry [url title snippet engine])
 
 
 
@@ -17,8 +17,8 @@
 
 (defn create-entry
   [x]
-  (let [bing (->entry (x "Url" ) (x "Title") (x "Description"))
-        google (->entry (x "link" ) (x "title") (x "snippet") ) ]
+  (let [bing (->entry (x "Url" ) (x "Title") (x "Description") "bing")
+        google (->entry (x "link" ) (x "title") (x "snippet") "google") ]
 
     (if (and (:url bing) (:title bing) (:snippet bing))
       bing
@@ -189,7 +189,7 @@
 
 
 (defn print-entry [x]
-  (str "" (:url x) "\n\tTitle: \"" (:title x) "\"\n\tSnippet: \"" (:snippet x) "\"\n")
+  (str "" (:url x) "\n\tTitle: \"" (:title x) "\"\n\tSnippet: \"" (:snippet x) "\"\n\tfrom: " (:engine x) "\n")
   )
 
 
