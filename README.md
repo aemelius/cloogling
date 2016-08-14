@@ -29,6 +29,8 @@ Create a `config.json` file including the credentials and and api-keys to connec
 
 ### Step 3: web cloogling is fun
 
+`lein run --quote-args --help`
+
 `lein run --quote-args "chick corea"`
 
 # Notes from the developer's journal
