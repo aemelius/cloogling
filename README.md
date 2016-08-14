@@ -23,7 +23,7 @@ With leiningen, of course.
 
 `lein test`
 
-### Step 2: setup the configuration
+### Step 2: create a `config.json` file
 
 Create a `config.json` file including the credentials and and api-keys to connect to Google and Bing API's. The source includes an example of config file named `config.json.example`.
 
