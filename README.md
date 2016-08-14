@@ -14,6 +14,8 @@ I used the following resources to gather a basic understanding of the language:
   - [Ch. 3](http://www.braveclojure.com/do-things/       "Ch. 2")
 - [Test-driving Clojure in Light Table] (https://www.youtube.com/watch?v=H_teKHH_Rk0 "")
 
+Of course, I also googled a lot (but I did not bing at all!).
+
 
 ## Tools of the craft
 

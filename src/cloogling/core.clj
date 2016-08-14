@@ -8,14 +8,12 @@
 (use 'clojure.data)
 (use 'clojure.java.io)
 
-
+;; record used to store data about a single entry returned within a search
 (defrecord entry [url title snippet engine])
 
-
-
-
-
 (defn create-entry
+  "Given a json snippet representing an entry returned by a query,
+  I create an entry record. This supports both google and bing formats."
   [x]
   (let [bing (->entry (x "Url" ) (x "Title") (x "Description") "bing")
         google (->entry (x "link" ) (x "title") (x "snippet") "google") ]
@@ -32,8 +30,9 @@
 
 
 (defn get-entries
-  (
-    [x]
+  "Given the body of a search (in json format), returns a list of entry records.
+  This works for both google and bing."
+  [x]
     (remove nil? (map create-entry (try
                                      (or
                                        (-> x
@@ -44,38 +43,41 @@
                                            (get-in ["items"])))
                                      (catch Exception e (empty nil))
                                      )
-                      )))
+                      ))
 
   )
 
 (defn get-google-query
-  [engine-id api-key x]
-  (if (or (= x nil) (= x ""))
+  "Return the url to be used to issue a query to the google api"
+  [engine-id api-key search-key]
+  (if (or (= search-key nil) (= search-key ""))
     (throw (Exception. "Null search keys confuse me."))
     (str "https://www.googleapis.com/customsearch/v1?num=10&cx="
          engine-id
          "&key="
          api-key
          "&q="
-         (url-encode x)
+         (url-encode search-key)
          )
     )
   )
 
 (defn get-bing-query
-  [x]
-  (if (or (= x nil) (= x ""))
+  "Return the url to be used to issue a query to the bing api"
+  [search-key]
+  (if (or (= search-key nil) (= search-key ""))
     (throw (Exception. "Null search keys confuse me."))
     (str "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query='"
-         (url-encode x)
+         (url-encode search-key)
          "'&$format=json"
          )
     )
   )
 
 (defn get-url-for-comparison
-  [x]
-  (-> x
+  "When comparig the results, I ignore differences due to http/https protocol, or omission of www prefix."
+  [entry]
+  (-> entry
       :url
       (clojure.string/replace-first #"^https" "http")
       (clojure.string/replace-first #"^http://www." "http://")
@@ -83,14 +85,8 @@
   )
 
 
-(-> "https://"
-    (clojure.string/replace-first #"^https" "http")
-    (clojure.string/replace-first #"^http://www." "http://")
-    )
-(clojure.string/replace-first "http://www." #"^https" "http")
-
-
 (defn get-common-urls
+  "Given two lists of entries, I return a list of duplicated entries, as found in the second list"
   [one two]
   (for [ item two
          :when (contains? (clojure.set/intersection (set (map get-url-for-comparison one)) (set (map get-url-for-comparison two))) (get-url-for-comparison item) )]
@@ -99,6 +95,9 @@
 
 
 (defn get-aggregated-result
+  "I aggregate the results in the two list of entries.
+  Precedence is given to results in the first list (the last result of the first list is presented before the first result of the second).
+  Urls in both lists are presented only as results of the first list."
   [one two]
 
   (concat one
@@ -116,18 +115,17 @@
       (get-in [scope, property-name])))
 
 (defn search-google
-  [engine-id api-key x]
-  (-> (get-google-query engine-id api-key x)
+  "Issue a query to google"
+  [engine-id api-key search-key]
+  (-> (get-google-query engine-id api-key search-key)
       http/get
       (:body)
       get-entries)
   )
 
-;;(search-google (read-property "config.json" "google" "engine-id")
-;;               (read-property "config.json" "google" "api-key")
-;;               "Miles Davis")
 
 (defn search-bing
+  "Issue a query to bing"
   [username password x]
   (-> (get-bing-query x)
       (http/get {:basic-auth [username password]} )
@@ -136,17 +134,18 @@
 
 
 
-(defn simple-similarity-metric [x y]
+(defn simple-similarity-metric
+  "Given two entries lists, computes a very simple similarity metric as the number of shared results divided by the number of entries in the first list."
+  [x y]
   (try (str (format "%3f" (* 100 (float (/ (count x) (count y))))) "%")
     (catch ArithmeticException e "0.0%" )
     )
   )
 
 
-(str (format "%3f" (* 100 (float (/ 1 2)))) "%")
-(.decimalValue (/ 1 2))
-
 (defn uber-query
+  "Issues both queries to google and bing, and returns the aggregated result,
+  the entries returned by both queries, and a simple similarity matric."
   [x]
   (let [google-result (search-google (read-property "config.json" "google" "engine-id")
                                      (read-property "config.json" "google" "api-key")
@@ -164,9 +163,6 @@
     )
   )
 
-
-
-;;(uber-query "Miles Davis")
 
 
 (defn usage [options-summary]
@@ -188,12 +184,16 @@
 
 
 
-(defn print-entry [x]
+(defn print-entry
+  "Returns a string representation of an entry record. Supposed to be human readable."
+  [x]
   (str "" (:url x) "\n\tTitle: \"" (:title x) "\"\n\tSnippet: \"" (:snippet x) "\"\n\tfrom: " (:engine x) "\n")
   )
 
 
-(defn get-printable-result [entries]
+(defn get-printable-result
+  "Returns a string representation of a list of entries. Supposed to be human readable."
+  [entries]
   (->> (map print-entry entries)
        (string/join \newline)
        )
@@ -212,7 +212,7 @@
       (not= (count arguments) 1) (exit 1 (usage summary))
       (= (first arguments) "") (exit 1 (usage summary))
       )
-    ;; Execute program with options
+
     (let [ uber-query-result  (uber-query (first arguments))
            ]
 
