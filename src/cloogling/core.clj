@@ -1,8 +1,10 @@
 (ns cloogling.core
   (:require [clojure.data.json :as json]
-            [cemerick.url :refer (url url-encode)]))
+            [cemerick.url :refer (url url-encode)]
+            [clj-http.client :as http]))
 
 (use 'clojure.data)
+
 
 (defrecord entry [url title snippet])
 (defn create-entry
@@ -56,24 +58,29 @@
   [x]
   (if (or (= x nil) (= x ""))
     (throw (Exception. "Null search keys confuse me."))
-    (str "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query="
+    (str "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query='"
          (url-encode x)
-         "&$format=json"
+         "'&$format=json"
          )
     )
   )
 
 (defn get-url
   [x]
-  (:url x))
+  (-> x
+     :url
+    (clojure.string/replace-first "https" "http")
+    )
+)
+
+
 
 (defn get-common-urls
   [one two]
-  (remove nil?   (concat (map get-url one)
-                         (-> (diff (map get-url one) (map get-url two))
-                             (nth 2) ;; urls only in two
-                             )))
-  )
+  (for [ item one
+  :when (contains? (clojure.set/intersection (set (map get-url one)) (set (map get-url two))) (get-url item) )]
+    (:url item)))
+
 
 (defn get-aggregated-result
   [one two]
@@ -84,6 +91,56 @@
             item )
           )
   )
+
+(defn read-property
+  [file scope property-name]
+  (-> file
+    slurp
+    json/read-str
+    (get-in [scope, property-name])))
+
+(defn search-google
+  [engine-id api-key x]
+  (-> (get-google-query engine-id api-key x)
+      http/get
+      (:body)
+      get-entries)
+  )
+
+;;(search-google (read-property "config.json" "google" "engine-id")
+;;               (read-property "config.json" "google" "api-key")
+;;               "Miles Davis")
+
+(defn search-bing
+ [username password x]
+  (-> (get-bing-query x)
+      (http/get {:basic-auth [username password]} )
+      (:body)
+      get-entries))
+
+
+;;(search-bing (read-property "config.json" "bing" "username")
+;;             (read-property "config.json" "bing" "password")
+;;             "Miles Davis")
+
+(defn uber-query
+  [x]
+  (let [google-result (search-google (read-property "config.json" "google" "engine-id")
+               (read-property "config.json" "google" "api-key")
+               x)
+        bing-result (search-bing (read-property "config.json" "bing" "username")
+             (read-property "config.json" "bing" "password")
+             x)]
+
+    [(get-aggregated-result google-result bing-result) (get-common-urls google-result bing-result)]
+
+    )
+  )
+
+;;(-> (uber-query "Miles Davis")
+;;    second)
+
+(clojure.string/replace "https://en.wikipedia.org/wiki/Miles_Davis"  #"^http.://" "")
 
 
 

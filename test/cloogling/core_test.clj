@@ -101,7 +101,7 @@
 
 
 ;; testing the generation of the url to query the google api
-(expect "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query=Miles%20Davis&$format=json"
+(expect "https://api.datamarket.azure.com/Bing/Search/Web?$top=10&Query='Miles%20Davis'&$format=json"
         (get-bing-query "Miles Davis"))
 
 ;; Againg, if you query nothing or an empty string, I am not going to go on
@@ -175,6 +175,42 @@
   (expect "from google"(:title (nth aggregated_result 1)))
   (expect "from bing"  (:title (nth aggregated_result 2)))
   )
+
+;; reading properties from a config file
+(expect "abcd"(read-property "config.json.example" "google" "api-key"
+                             ))
+(expect "1234:abcd"(read-property "config.json.example" "google" "engine-id"
+                                  ))
+(expect "bing-username"(read-property "config.json.example" "bing" "username"
+                                      ))
+(expect "bing-password"(read-property "config.json.example" "bing" "password"
+                                      ))
+
+
+
+(let [ google [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a") (->entry "https://www.milesdavis.com/" "5" "b") (->entry "d" "d" "d")]
+       bing [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a") (->entry "https://www.milesdavis.com/" "5" "b") (->entry "c" "c" "c")]]
+
+  (expect [ "https://en.wikipedia.org/wiki/Miles_Davis"  "https://www.milesdavis.com/" ]
+          (get-common-urls google bing)
+          )
+  )
+
+
+( expect ["https://en.wikipedia.org/wiki/Miles_Davis"
+          "https://www.milesdavis.com/"
+          "http://www.allmusic.com/artist/miles-davis-mn0000423829"
+          "http://www.biography.com/people/miles-davis-9267992" ]
+  (get-common-urls (-> miles_davis_data_google
+                       get-entries
+                       )
+                   (-> miles_davis_data
+                       get-entries)
+  )
+)
+
+
+
 
 
 

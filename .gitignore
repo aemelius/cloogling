@@ -11,3 +11,4 @@ pom.xml.asc
 .hg/
 google_api-key.txt
 google_engine-id.txt
+config.json

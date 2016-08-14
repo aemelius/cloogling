@@ -6,5 +6,6 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [expectations "1.4.52"]
                  [org.clojure/data.json "0.2.6"]
-                 [com.cemerick/url "0.1.1"]]
+                 [com.cemerick/url "0.1.1"]
+                 [clj-http "2.2.0"]]
   :plugins [[lein-autoexpect "1.0"]])
