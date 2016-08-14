@@ -191,8 +191,6 @@
 (let [ google [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a"  "engine") (->entry "https://www.milesdavis.com/" "5" "b" "engine") (->entry "d" "d" "d" "engine")]
        bing [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a" "engine") (->entry "https://www.milesdavis.com/" "5" "b" "engine") (->entry "c" "c" "c" "engine")]]
 
-
-  (get-printable-result google)
   (expect [ "https://en.wikipedia.org/wiki/Miles_Davis"  "https://www.milesdavis.com/" ]
           (map (fn [x] (:url x)) (get-common-urls google bing))
           )
@@ -221,9 +219,3 @@
 (expect (get-url-for-comparison (->entry "https://www.abc.com" "jadksdhak" "aksjdhaks" "engine"))
         (get-url-for-comparison (->entry "http://abc.com" "abc" "dfsdf" "engine") )
         )
-
-
-
-
-
-
