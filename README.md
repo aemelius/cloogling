@@ -52,7 +52,7 @@ Of course, I also googled a lot (but I did not bing at all!).
 
 ## Tools of the craft
 
-- Lighttable
+- [Lighttable](http://lighttable.com/ "Lighttable")
 - [Leiningen](http://leiningen.org/ "Leiningen")
 
 # License
