@@ -1,4 +1,4 @@
-# cloogling
+# Cloogling
 
 Clojure + google + bing
 
