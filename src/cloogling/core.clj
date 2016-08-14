@@ -1,12 +1,20 @@
 (ns cloogling.core
   (:require [clojure.data.json :as json]
             [cemerick.url :refer (url url-encode)]
-            [clj-http.client :as http]))
+            [clj-http.client :as http]
+            [clojure.tools.cli :refer [parse-opts]]
+            [clojure.string :as string]))
 
 (use 'clojure.data)
+(use 'clojure.java.io)
 
 
 (defrecord entry [url title snippet])
+
+
+
+
+
 (defn create-entry
   [x]
   (let [bing (->entry (x "Url" ) (x "Title") (x "Description"))
@@ -68,18 +76,26 @@
 (defn get-url-for-comparison
   [x]
   (-> x
-     :url
-    (clojure.string/replace-first "https" "http")
-    )
-)
+      :url
+      (clojure.string/replace-first #"^https" "http")
+      (clojure.string/replace-first #"^http://www." "http://")
+      )
+  )
 
+
+(-> "https://"
+    (clojure.string/replace-first #"^https" "http")
+    (clojure.string/replace-first #"^http://www." "http://")
+    )
+(clojure.string/replace-first "http://www." #"^https" "http")
 
 
 (defn get-common-urls
   [one two]
-  (for [ item one
-  :when (contains? (clojure.set/intersection (set (map get-url-for-comparison one)) (set (map get-url-for-comparison two))) (get-url-for-comparison item) )]
-    (:url item)))
+  (for [ item two
+         :when (contains? (clojure.set/intersection (set (map get-url-for-comparison one)) (set (map get-url-for-comparison two))) (get-url-for-comparison item) )]
+    item)
+  )
 
 
 (defn get-aggregated-result
@@ -87,7 +103,7 @@
 
   (concat one
           (for [item two
-                :when (not-any? (fn [x] (= (:url item) (:url x) )) one )]
+                :when (not-any? (fn [x] (=   ( get-url-for-comparison item) (get-url-for-comparison x) )) one )]
             item )
           )
   )
@@ -95,9 +111,9 @@
 (defn read-property
   [file scope property-name]
   (-> file
-    slurp
-    json/read-str
-    (get-in [scope, property-name])))
+      slurp
+      json/read-str
+      (get-in [scope, property-name])))
 
 (defn search-google
   [engine-id api-key x]
@@ -112,25 +128,23 @@
 ;;               "Miles Davis")
 
 (defn search-bing
- [username password x]
+  [username password x]
   (-> (get-bing-query x)
       (http/get {:basic-auth [username password]} )
       (:body)
       get-entries))
 
 
-;;(search-bing (read-property "config.json" "bing" "username")
-;;             (read-property "config.json" "bing" "password")
-;;             "Miles Davis")
+
 
 (defn uber-query
   [x]
   (let [google-result (search-google (read-property "config.json" "google" "engine-id")
-               (read-property "config.json" "google" "api-key")
-               x)
+                                     (read-property "config.json" "google" "api-key")
+                                     x)
         bing-result (search-bing (read-property "config.json" "bing" "username")
-             (read-property "config.json" "bing" "password")
-             x)]
+                                 (read-property "config.json" "bing" "password")
+                                 x)]
 
     [(get-aggregated-result google-result bing-result) (get-common-urls google-result bing-result)]
 
@@ -140,17 +154,67 @@
 ;;(uber-query "Miles Davis")
 
 
+(defn usage [options-summary]
+  (->> ["Welcome to the Cloogling help message!"
+        ""
+        "Usage (with leiningen run): lein run --quote-arguments search-term"
+        ""
+        "Options:"
+        options-summary]
+       (string/join \newline)))
+
+(defn error-msg [errors]
+  (str "The following errors occurred while parsing your command:\n\n"
+       (string/join \newline errors)))
+
+(defn exit [status msg]
+  (println msg)
+  (System/exit status))
 
 
 
+(defn print-entry [x]
+  (str "" (:url x) "\n\tTitle: \"" (:title x) "\"\n\tSnippet: \"" (:snippet x) "\"\n")
+  )
+
+
+(defn get-printable-result [entries]
+  (->> (map print-entry entries)
+       (string/join \newline)
+       )
+  )
+
+
+(def cli-options
+  [["-h" "--help"]])
+
+(defn -main [& args]
+  (let [{:keys [options arguments errors summary]} (parse-opts args cli-options)]
+
+    (cond
+      (:help options) (exit 0 (usage summary))
+      errors (exit 1 (error-msg errors))
+      (not= (count arguments) 1) (exit 1 (usage summary))
+      (= (first arguments) "") (exit 1 (usage summary))
+      )
+    ;; Execute program with options
+    (let [ uber-query-result  (uber-query (first arguments))
+           ]
 
 
 
+      (println  (get-printable-result (first uber-query-result))
+                "\n-------------------------\n\n"
+                "The following results were duplicated in Bing:\n\n"
+                (get-printable-result (second uber-query-result))
 
 
 
+                )
 
-
+      )
+    )
+  )
 
 
 

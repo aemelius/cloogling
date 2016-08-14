@@ -191,24 +191,36 @@
 (let [ google [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a") (->entry "https://www.milesdavis.com/" "5" "b") (->entry "d" "d" "d")]
        bing [(->entry "https://en.wikipedia.org/wiki/Miles_Davis" "x" "a") (->entry "https://www.milesdavis.com/" "5" "b") (->entry "c" "c" "c")]]
 
+
+  (get-printable-result google)
   (expect [ "https://en.wikipedia.org/wiki/Miles_Davis"  "https://www.milesdavis.com/" ]
-          (get-common-urls google bing)
+          (map (fn [x] (:url x)) (get-common-urls google bing))
           )
   )
 
 
 ( expect ["https://en.wikipedia.org/wiki/Miles_Davis"
-          "https://www.milesdavis.com/"
+          "http://www.milesdavis.com/"
           "http://www.allmusic.com/artist/miles-davis-mn0000423829"
           "http://www.biography.com/people/miles-davis-9267992" ]
-  (get-common-urls (-> miles_davis_data_google
+  (map (fn [x] (:url x))(get-common-urls (-> miles_davis_data_google
                        get-entries
                        )
                    (-> miles_davis_data
                        get-entries)
-  )
+  ))
 )
 
+(expect (get-url-for-comparison (->entry "http://abc.com" "jadksdhak" "aksjdhaks"))
+        (get-url-for-comparison (->entry "https://abc.com" "abc" "dfsdf") )
+        )
+(expect (get-url-for-comparison (->entry "http://www.johncoltrane.com/" "jadksdhak" "aksjdhaks"))
+        (get-url-for-comparison (->entry "http://johncoltrane.com/" "abc" "dfsdf") )
+        )
+
+(expect (get-url-for-comparison (->entry "https://www.abc.com" "jadksdhak" "aksjdhaks"))
+        (get-url-for-comparison (->entry "http://abc.com" "abc" "dfsdf") )
+        )
 
 
 

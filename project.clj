@@ -7,5 +7,7 @@
                  [expectations "1.4.52"]
                  [org.clojure/data.json "0.2.6"]
                  [com.cemerick/url "0.1.1"]
-                 [clj-http "2.2.0"]]
-  :plugins [[lein-autoexpect "1.0"]])
+                 [clj-http "2.2.0"]
+                 [org.clojure/tools.cli "0.3.5"]]
+  :plugins [[lein-autoexpect "1.0"]]
+  :main cloogling.core)
