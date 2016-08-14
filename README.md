@@ -27,7 +27,7 @@ With [leiningen](http://leiningen.org/ "Leiningen"), of course.
 
 Create a `config.json` file including the credentials and and api-keys to connect to Google and Bing API's. The source includes an example of config file named `config.json.example`.
 
-### Step 3: cloogling your search key
+### Step 3: web cloogling is fun
 
 `lein run --quote-args "chick corea"`
 
