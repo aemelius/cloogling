@@ -137,10 +137,9 @@
     )
   )
 
-;;(-> (uber-query "Miles Davis")
-;;    second)
+;;(uber-query "Miles Davis")
 
-(clojure.string/replace "https://en.wikipedia.org/wiki/Miles_Davis"  #"^http.://" "")
+
 
 
 
