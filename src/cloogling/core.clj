@@ -65,7 +65,7 @@
     )
   )
 
-(defn get-url
+(defn get-url-for-comparison
   [x]
   (-> x
      :url
@@ -78,7 +78,7 @@
 (defn get-common-urls
   [one two]
   (for [ item one
-  :when (contains? (clojure.set/intersection (set (map get-url one)) (set (map get-url two))) (get-url item) )]
+  :when (contains? (clojure.set/intersection (set (map get-url-for-comparison one)) (set (map get-url-for-comparison two))) (get-url-for-comparison item) )]
     (:url item)))
 
 
