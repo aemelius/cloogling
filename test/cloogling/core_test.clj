@@ -202,12 +202,12 @@
           "http://www.allmusic.com/artist/miles-davis-mn0000423829"
           "http://www.biography.com/people/miles-davis-9267992" ]
   (map (fn [x] (:url x))(get-common-urls (-> miles_davis_data_google
-                       get-entries
-                       )
-                   (-> miles_davis_data
-                       get-entries)
-  ))
-)
+                                             get-entries
+                                             )
+                                         (-> miles_davis_data
+                                             get-entries)
+                                         ))
+  )
 
 (expect (get-url-for-comparison (->entry "http://abc.com" "jadksdhak" "aksjdhaks" "engine"))
         (get-url-for-comparison (->entry "https://abc.com" "abc" "dfsdf" "engine") )

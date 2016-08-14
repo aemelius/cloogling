@@ -33,17 +33,17 @@
   "Given the body of a search (in json format), returns a list of entry records.
   This works for both google and bing."
   [x]
-    (remove nil? (map create-entry (try
-                                     (or
-                                       (-> x
-                                           json/read-str
-                                           (get-in  ["d" "results"]))
-                                       (-> x
-                                           json/read-str
-                                           (get-in ["items"])))
-                                     (catch Exception e (empty nil))
-                                     )
-                      ))
+  (remove nil? (map create-entry (try
+                                   (or
+                                     (-> x
+                                         json/read-str
+                                         (get-in  ["d" "results"]))
+                                     (-> x
+                                         json/read-str
+                                         (get-in ["items"])))
+                                   (catch Exception e (empty nil))
+                                   )
+                    ))
 
   )
 
