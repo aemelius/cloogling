@@ -136,6 +136,15 @@
 
 
 
+(defn simple-similarity-metric [x y]
+  (try (str (format "%3f" (* 100 (float (/ (count x) (count y))))) "%")
+    (catch ArithmeticException e "0.0%" )
+    )
+  )
+
+
+(str (format "%3f" (* 100 (float (/ 1 2)))) "%")
+(.decimalValue (/ 1 2))
 
 (defn uber-query
   [x]
@@ -144,12 +153,18 @@
                                      x)
         bing-result (search-bing (read-property "config.json" "bing" "username")
                                  (read-property "config.json" "bing" "password")
-                                 x)]
+                                 x)
+        duplicated-in-bing (get-common-urls google-result bing-result)
 
-    [(get-aggregated-result google-result bing-result) (get-common-urls google-result bing-result)]
+        similarity-metric (simple-similarity-metric duplicated-in-bing google-result)
+        ]
+
+    [(get-aggregated-result google-result bing-result) duplicated-in-bing similarity-metric ]
 
     )
   )
+
+
 
 ;;(uber-query "Miles Davis")
 
@@ -207,6 +222,9 @@
                 "\n-------------------------\n\n"
                 "The following results were duplicated in Bing:\n\n"
                 (get-printable-result (second uber-query-result))
+                "\n-------------------------\n\n"
+                "A simple similarity metric (does not consider results order): "
+                (nth uber-query-result 2)
 
 
 
