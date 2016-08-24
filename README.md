@@ -59,6 +59,5 @@ Of course, I also googled a lot (but I did not bing at all!).
 
 Copyright © 2016 Simone Bruno
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License either version 1.0.
 
