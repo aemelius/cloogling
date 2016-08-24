@@ -6,7 +6,7 @@ Clojure + google + bing
 
 - I am a command line tool written in Clojure
 - Given a search key, I query both Google Custom Search API and Bing Search API, retrieveing the first 10 results from each engine
-- I aggregate the results, giving priority to google entries (the last entry returned by google will still come first than the first entry returned by bing)
+- I aggregate the results, giving priority to google entries (the last entry returned by google will still come before the first entry returned by bing)
 - In case the two queries share a set of results, I will show you
 - I will display a very simple metric of the similarity between the two searches (the percentage of shared results divided by the number of entries returned by google; the result order is not taken into account in this metric)
 
