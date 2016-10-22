@@ -47,6 +47,12 @@
 
   )
 
+(defn raccattaDallaSessione
+  "Raccatta dalla Sessione"
+  [sessione chiave]
+  (get sessione chiave))
+
+
 (defn get-google-query
   "Return the url to be used to issue a query to the google api"
   [engine-id api-key search-key]
