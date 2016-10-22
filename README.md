@@ -4,6 +4,7 @@ Clojure + google + bing
 
 # What is Cloogling?
 
+- I am just a small project to experiment with Clojure.
 - I am a command line tool written in Clojure
 - Given a search key, I query both Google Custom Search API and Bing Search API, retrieveing the first 10 results from each engine
 - I aggregate the results, giving priority to google entries (the last entry returned by google will still come before the first entry returned by bing)
